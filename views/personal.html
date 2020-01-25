@@ -8,16 +8,68 @@
 </div>
 
 <div class ="w3-container" id="main">
-    <form method="get" action="profile">
+    <form method="post" action="page2">
         <fieldset class="form-group">
 
             <div>
-                <!--Header and Web info-->
-                <h1>Personal</h1>
-
+                <!--Header-->
+                <h1>Personal Information</h1>
+                <hr>
             </div>
 
+
+<!--            <div class="form-group" id="note">-->
+<!--                <input type="text" class="form-control" id="notes" name="notes">-->
+
+<!--            </div>-->
+
+            <!-- First Name | text box -->
+            <div class="form-group col-sm-8">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName">
+<!--                <span class="err" id="err-fname">Please enter a first name</span>-->
+            </div>
+            <!-- Last Name | text box -->
+            <div class="form-group col-sm-8">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName">
+<!--                <span class="err" id="err-lname">Please enter a last name </span>-->
+            </div>
+
+            <!-- Age | text box -->
+            <div class="form-group col-sm-8">
+                <label for="age">Age</label>
+                <input type="text" class="form-control" id="age" name="age">
+                <!--                <span class="err" id="err-age">Please enter your age </span>-->
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group col-sm-8">
+                <div>
+
+                        <label class="radio-inline">Gender<span class="required">  </span><br>
+                            <input type="radio" name="gender" value="male"> Male<br>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="gender"  value="female"> Female<br>
+                        </label>
+
+                    <!-- <span id="err-Gender" class="err"> Please make a selection</span>-->
+                </div>
+            </div>
+
+            <!-- Phone Number | text box -->
+            <div class="form-group col-sm-8">
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-control" id="phone" name="phone">
+                <!-- <span class="err" id="err-phone">Please enter a phone number </span>-->
+            </div>
+
+            <button id="next" type="submit" class="btn btn-primary ">Next ></button>
+
         </fieldset>
+
     </form>
 </div>
 
