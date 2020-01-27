@@ -8,7 +8,7 @@
 </div>
 
 <div class ="w3-container" id="main">
-    <form method="post" action="summary">
+    <form method="post" action="results">
         <fieldset class="form-group">
 
             <div>
@@ -17,122 +17,121 @@
                 <hr>
             </div>
 
-            <!-- Interests -->
-                <!-- in-door interest -->
-            <a>In-door Interests</a>
-            <div class="checkbox-grid">
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="tv" id="roles1" name="roles[]">
-                    <label class="custom-control-label" for="roles1">
-                        tv
-                    </label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="puzzles" id="roles2" name="roles[]">
-                    <label class="custom-control-label" for="roles2">
-                        puzzles
-                    </label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="movies" id="roles3" name="roles[]">
-                    <label class="custom-control-label" for="roles3">
-                        movies
-                    </label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="reading" id="roles4" name="roles[]">
-                    <label class="custom-control-label" for="roles4">
-                        reading
-                    </label>
+            <div class="row">
+                <!-- In-door interests-->
+                <div class="col mb-5 mt-4 ml-5">
+                    <p><b>In-door Interests</b></p>
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="tv" id="tv" value="tv">
+                        <label class="custom-control-label" for="tv">tv</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="puzzles" id="puzzles" value="puzzles">
+                        <label class="custom-control-label" for="puzzles">puzzles</label>
+                    </div>
                 </div>
 
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="cooking" id="roles5" name="roles[]">
-                    <label class="custom-control-label" for="roles5">
-                        cooking
-                    </label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="playing cards" id="roles6" name="roles[]">
-                    <label class="custom-control-label" for="roles6">
-                        playing cards
-                    </label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="board games" id="roles7" name="roles[]">
-                    <label class="custom-control-label" for="roles7">
-                        board games
-                    </label>
+                <div class="col mb-5 mt-4 ml-5">
+                    <br><br>
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="movies" id="movies" value="movies">
+                        <label class="custom-control-label" for="movies">movies</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="reading" id="reading" value="reading">
+                        <label class="custom-control-label" for="reading">reading</label>
+                    </div>
+
                 </div>
 
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="video games" id="roles8" name="roles[]">
-                    <label class="custom-control-label" for="roles8">
-                        video games
-                    </label>
+                <div class="col mb-5 mt-4 ml-5">
+                    <br><br>
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="cooking" id="cooking" value="cooking">
+                        <label class="custom-control-label" for="cooking">cooking</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="playing cards" id="playing cards" value="playing cards">
+                        <label class="custom-control-label" for="playing cards">playing cards</label>
+                    </div>
+
+                </div>
+
+                <div class="col mb-5 mt-4 ml-5">
+                    <br><br>
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="board games" id="board games" value="board games">
+                        <label class="custom-control-label" for="board games">board games</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="video games" id="video games" value="video games">
+                        <label class="custom-control-label" for="video games">video games</label>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- out-door interest -->
-            <br>
-            <div class="checkbox-grid">
-                <a>In-door Interests</a>
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="tv" id="roles9" name="roles[]">
-                    <label class="custom-control-label" for="roles9">
-                        tv
-                    </label>
+            <div class="row">
+                <!-- out-door interests -->
+                <div class="col mb-5 ml-5">
+                    <p class="font-weight-bold">Out-door Interests</p>
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="hiking" id="hiking" value="hiking">
+                        <label class="custom-control-label" for="hiking">hiking</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="walking" id="walking" value="walking">
+                        <label class="custom-control-label" for="walking">walking</label>
+                    </div>
+
                 </div>
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="puzzles" id="roles10" name="roles[]">
-                    <label class="custom-control-label" for="roles10">
-                        puzzles
-                    </label>
+
+                <div class="col mb-5 ml-5">
+                    <br><br>
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="biking" id="biking" value="biking">
+                        <label class="custom-control-label" for="biking">biking</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="climbing" id="climbing" value="climbing">
+                        <label class="custom-control-label" for="climbing">climbing</label>
+                    </div>
+
                 </div>
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="movies" id="roles11" name="roles[]">
-                    <label class="custom-control-label" for="roles11">
-                        movies
-                    </label>
+
+                <div class="col mb-5 ml-5">
+                    <br><br>
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="swimming" id="swimming" value="swimming">
+                        <label class="custom-control-label" for="swimming">swimming</label>
+                    </div>
                 </div>
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="reading" id="roles12" name="roles[]">
-                    <label class="custom-control-label" for="roles12">
-                        reading
-                    </label>
+
+                <div class="col mb-5 ml-5">
+                    <br><br>
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="collecting" id="collecting" value="collecting">
+                        <label class="custom-control-label" for="collecting">collecting</label>
+                    </div>
                 </div>
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="cooking" id="roles13" name="roles[]">
-                    <label class="custom-control-label" for="roles13">
-                        cooking
-                    </label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="playing cards" id="roles14" name="roles[]">
-                    <label class="custom-control-label" for="roles14">
-                        playing cards
-                    </label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="board games" id="roles15" name="roles[]">
-                    <label class="custom-control-label" for="roles15">
-                        board games
-                    </label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" value="video games" id="roles16" name="roles[]">
-                    <label class="custom-control-label" for="roles16">
-                        video games
-                    </label>
-                </div>
+
             </div>
-
-
 
             <button id="next" type="submit" class="btn btn-primary ">Next ></button>
         </fieldset>
     </form>
 </div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>

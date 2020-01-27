@@ -17,61 +17,78 @@
                 <hr>
             </div>
 
-
-<!--            <div class="form-group" id="note">-->
-<!--                <input type="text" class="form-control" id="notes" name="notes">-->
-
-<!--            </div>-->
-
-            <!-- First Name | text box -->
-            <div class="form-group col-sm-8">
-                <label for="firstName">First Name</label>
-                <input type="text" class="form-control" id="firstName" name="firstName">
-<!--                <span class="err" id="err-fname">Please enter a first name</span>-->
-            </div>
-            <!-- Last Name | text box -->
-            <div class="form-group col-sm-8">
-                <label for="lastName">Last Name</label>
-                <input type="text" class="form-control" id="lastName" name="lastName">
-<!--                <span class="err" id="err-lname">Please enter a last name </span>-->
-            </div>
-
-            <!-- Age | text box -->
-            <div class="form-group col-sm-8">
-                <label for="age">Age</label>
-                <input type="text" class="form-control" id="age" name="age">
-                <!--                <span class="err" id="err-age">Please enter your age </span>-->
-            </div>
-
-            <!-- Gender -->
-            <div class="form-group col-sm-8">
-                <div>
-
-                        <label class="radio-inline">Gender<span class="required">  </span><br>
-                            <input type="radio" name="gender" value="male"> Male<br>
-                        </label>
-
-                        <label>
-                            <input type="radio" name="gender"  value="female"> Female<br>
-                        </label>
-
-                    <!-- <span id="err-Gender" class="err"> Please make a selection</span>-->
+            <div class="row">
+                <!-- First Name | text box -->
+                <div class="col mb-3 mt-5 ml-4">
+                <div class="form-group">
+                    <label for="firstName"><b>First Name</b></label>
+                    <input type="text" class="form-control" id="firstName" name="firstName">
+    <!--                <span class="err" id="err-fname">Please enter a first name</span>-->
                 </div>
-            </div>
 
-            <!-- Phone Number | text box -->
-            <div class="form-group col-sm-8">
-                <label for="phone">Phone Number</label>
-                <input type="text" class="form-control" id="phone" name="phone">
-                <!-- <span class="err" id="err-phone">Please enter a phone number </span>-->
-            </div>
 
-            <button id="next" type="submit" class="btn btn-primary ">Next ></button>
+                <!-- Last Name | text box -->
+                <div class="form-group">
+                    <label for="lastName"><b>Last Name</b></label>
+                    <input type="text" class="form-control" id="lastName" name="lastName">
+    <!--                <span class="err" id="err-lname">Please enter a last name </span>-->
+                </div>
+
+                <!-- Age | text box -->
+                <div class="form-group">
+                    <label for="age"><b>Age</b></label>
+                    <input type="text" class="form-control" id="age" name="age">
+                    <!--                <span class="err" id="err-age">Please enter your age </span>-->
+                </div>
+
+                <!-- Gender -->
+                <div class="form-group">
+                    <div>
+
+                        <label class="radio-inline"><b>Gender</b><span class="required">  </span><br>
+                                <input type="radio" name="gender" value="male"> Male<br>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="gender"  value="female"> Female<br>
+                            </label>
+
+                        <!-- <span id="err-Gender" class="err"> Please make a selection</span>-->
+                    </div>
+                </div>
+
+                <!-- Phone Number | text box -->
+                <div class="form-group">
+                    <label for="phone"><b>Phone Number</b></label>
+                    <input type="text" class="form-control" id="phone" name="phone">
+                    <!-- <span class="err" id="err-phone">Please enter a phone number </span>-->
+                </div>
+
+                </div>
+
+                    <div class="col mt-4 d-flex align-items-end flex-column" role="alert">
+                        <div class="alert alert-secondary m-5 mb-auto p-3" role="alert">
+                            <p><strong>Note:</strong> All information entered is protected by our
+                                <a href="#" class="card-link">privacy policy</a>. Profile information can only
+                                be viewed by others with your permission.</p>
+                        </div>
+
+                        <!-- Button div -->
+                        <div>
+                            <input type="submit" class="btn btn-primary position-relative" value="Next >">
+                        </div>
+                    </div>
+            </div>
 
         </fieldset>
 
     </form>
 </div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>
