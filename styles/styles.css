@@ -26,8 +26,8 @@ fieldset{
 }
 
 
-/*adjusts the img*/
-img{
+/*adjusts the img on homepage*/
+#homepage{
     height: 600px;
     width: 50%;
     float: right;
@@ -73,6 +73,13 @@ img{
     font-style: italic;
     text-align: left;
     margin-left: 30px;
+}
+
+/*Summary img*/
+
+#summaryImg{
+    width: 400px;
+    height: 400px;
 }
 
 /*Styles the navbar*/

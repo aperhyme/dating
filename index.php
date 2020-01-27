@@ -24,35 +24,43 @@ $f3->route("GET /", function (){
     echo $view->render("views/home.html");
 });
 
-//Define a default route
+//Define a personal route
 $f3->route("GET /page", function () {
     $view = new Template();
     echo $view->render("views/personal.html");
 });
 
-//Define a default route
+//Define a profile route
 $f3->route("POST /page2", function () {
     //var_dump($_POST);
-    //$_SESSION['food'] = $_POST['food'];
+    $_SESSION['firstName'] = $_POST['firstName'];
+    $_SESSION['lastName'] = $_POST['lastName'];
+    $_SESSION['age'] = $_POST['age'];
+    $_SESSION['gender'] = $_POST['gender'];
+    $_SESSION['phone'] = $_POST['phone'];
 
     $view = new Template();
     echo $view->render("views/profile.html");
 });
 
-//Define a default route
+//Define a interests route
 $f3->route("POST /page3", function () {
     //var_dump($_POST);
-    //$_SESSION['meal'] = $_POST['meal'];
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['state'] = $_POST['state'];
+    $_SESSION['seeking'] = $_POST['seeking'];
+    $_SESSION['bio'] = $_POST['bio'];
 
     $view = new Template();
     echo $view->render("views/interests.html");
 });
 
-//Define a default route
+//Define a summary route
 $f3->route("POST /results", function () {
     //var_dump($_POST);
-    //$_SESSION['drink'] = $_POST['drink'];
-    //$_SESSION['size'] = $_POST['size'];
+    $roles = $_POST['roles'];
+    $string = implode(" ",$roles);
+    $_SESSION['roles'] = $string;
 
     $view = new Template();
     echo $view->render("views/summary.html");
