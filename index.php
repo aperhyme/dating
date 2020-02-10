@@ -14,6 +14,8 @@ error_reporting(E_ALL);
 
 //Require autoload file
 require("vendor/autoload.php");
+require("model/validation.php");
+
 
 //Instantiate F3
 $f3 = Base::Instance();
@@ -31,8 +33,20 @@ $f3->route("GET /page", function () {
 });
 
 //Define a profile route
-$f3->route("POST /page2", function () {
+$f3->route("POST /page2", function ($f3) {
     //var_dump($_POST);
+
+    $_SESSION = array();
+    if(isset($_POST['firstName']) && isset($_POST['lastName'])) {
+        $name = $_POST['firstName, lastName'];
+        if (validName($name)) {
+            $_SESSION['firstName, lastName'] = $name;
+            $f3->reroute('/page2');
+        } else {
+            $f3->set("errors['name']", "Please enter First and Last name");
+        }
+    }
+
     $_SESSION['firstName'] = $_POST['firstName'];
     $_SESSION['lastName'] = $_POST['lastName'];
     $_SESSION['age'] = $_POST['age'];
