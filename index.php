@@ -62,7 +62,7 @@ $f3->route("GET|POST /page", function ($f3) {
             $_SESSION['phone'] = $phone;
 
             //Redirect to profile page
-            $f3->reroute('/profile');
+            $f3->reroute('/page2');
         }
     }
 
@@ -94,7 +94,7 @@ $f3->route("GET|POST /page2", function ($f3) {
             $_SESSION['state'] = $state;
 
             //Redirect to profile page
-            $f3->reroute('/interests');
+            $f3->reroute('/page3');
         }
     }
 

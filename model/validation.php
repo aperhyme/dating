@@ -1,11 +1,10 @@
-<!--/**-->
-<!--* Alex Grigorenko-->
-<!--* 1/26/20-->
-<!--* /328/dating/views/validation.php-->
-<!--* php validation-->
-<!--*/-->
 <?php
-
+//<!--/**-->
+//<!--* Alex Grigorenko-->
+//<!--* 1/26/20-->
+//<!--* /328/dating/views/validation.php-->
+//<!--* php validation-->
+//<!--*/-->
 
 function validPersonal()
 {

@@ -32,9 +32,11 @@
                         <label for="email"><b>Email</b></label>
                         <input type="text" class="form-control" id="email" name="email" value="{{ @email }}">
 
+                    <br>
                         <check if="{{ @errors['email'] }}">
                             <span class="alert">{{ @errors['email'] }}</span><br>
                         </check>
+                    <br>
 
                     <label><b>State</b><span class="required">  </span><br></label>
                         <select class="form-control" id="state" name="state">
