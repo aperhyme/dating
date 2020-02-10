@@ -7,35 +7,12 @@
 <?php
 
 
-//validate name
-function validfirst($firstName) {
-
-    return !empty($firstName) && ctype_alpha($firstName);
-}
-
-function validLast($lastName){
-    return !empty($lastName) && ctype_alpha($lastName);
-}
-
-// validate age
-function validAge($age){
-
-    return !empty($age) && ctype_digit($age) && $age > 18
-        && $age < 118;
-}
-
-// validate phone number
-function validPhone($phone){
-
-    return !empty($phone) && ctype_digit($phone);
-}
-
-function validInfo()
+function validPersonal()
 {
     global $f3;
     $isValid = true;
 
-    if (!validfirst($f3->get('firstName'))) {
+    if (!validFirst($f3->get('firstName'))) {
 
         $isValid = false;
         $f3->set("errors['firstName']", "Please enter first name");
@@ -64,12 +41,30 @@ function validInfo()
 }
 
 
+//validate name
+function validFirst($firstName) {
 
-// validate email
-function validEmail(){
-
-    return !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL);
+    return !empty($firstName) && ctype_alpha($firstName);
 }
+
+function validLast($lastName){
+
+    return !empty($lastName) && ctype_alpha($lastName);
+}
+
+// validate age
+function validAge($age){
+
+    return !empty($age) && ctype_digit($age) && $age > 18
+        && $age < 118;
+}
+
+// validate phone number
+function validPhone($phone){
+
+    return !empty($phone) && ctype_digit($phone);
+}
+
 
 // page 2 validation
 function validProfile()
@@ -77,13 +72,19 @@ function validProfile()
     global $f3;
     $isValid = true;
 
-    if (!validEmail($f3->get('email'))) {
-
+    if(!validEmail($f3->get('email'))){
         $isValid = false;
         $f3->set("errors['email']", "Please enter a valid email");
     }
 
     return $isValid;
+}
+
+
+// validate email
+function validEmail($email){
+
+    return !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
 
