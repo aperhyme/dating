@@ -142,9 +142,7 @@ $f3->route("GET|POST /page3", function () {
 
 //Define a summary route
 $f3->route("POST /results", function () {
-    $roles = $_POST['roles'];
-    $string = implode(" ",$roles);
-    $_SESSION['roles'] = $string;
+    $_SESSION['roles'] = $_POST['roles'];
 
     $view = new Template();
     echo $view->render("views/summary.html");
