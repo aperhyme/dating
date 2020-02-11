@@ -51,12 +51,15 @@ $f3->route("GET|POST /page", function ($f3) {
         $lastName = $_POST['lastName'];
         $age = $_POST['age'];
         $phone = $_POST['phone'];
+        $gender = $_POST['gender'];
 
         //Add data to hive
         $f3->set('firstName', $firstName);
         $f3->set('lastName', $lastName);
         $f3->set('age', $age);
         $f3->set('phone', $phone);
+        $f3->set('gender', $gender);
+
 
         //If data is valid
         if (validPersonal()) {
@@ -66,6 +69,7 @@ $f3->route("GET|POST /page", function ($f3) {
             $_SESSION['lastName'] = $lastName;
             $_SESSION['age'] = $age;
             $_SESSION['phone'] = $phone;
+            $_SESSION['gender'] = $gender;
 
             //Redirect to profile page
             $f3->reroute('/page2');
@@ -87,10 +91,16 @@ $f3->route("GET|POST /page2", function ($f3) {
         //Get data from form
         $email = $_POST['email'];
         $state = $_POST['state'];
+        $seeking = $_POST['seeking'];
+        $bio = $_POST['bio'];
+
 
         //Add data to hive
         $f3->set('email', $email);
         $f3->set('state', $state);
+        $f3->set('seeking', $seeking);
+        $f3->set('bio', $bio);
+
 
         //If data is valid
         if (validProfile()) {
@@ -98,6 +108,8 @@ $f3->route("GET|POST /page2", function ($f3) {
             //Write data to Session
             $_SESSION['email'] = $email;
             $_SESSION['state'] = $state;
+            $_SESSION['seeking'] = $seeking;
+            $_SESSION['bio'] = $bio;
 
             //Redirect to profile page
             $f3->reroute('/page3');
@@ -117,10 +129,12 @@ $f3->route("GET|POST /page2", function ($f3) {
 //Define a interests route
 $f3->route("GET|POST /page3", function () {
     //var_dump($_POST);
-    $_SESSION['email'] = $_POST['email'];
-    $_SESSION['state'] = $_POST['state'];
-    $_SESSION['seeking'] = $_POST['seeking'];
-    $_SESSION['bio'] = $_POST['bio'];
+
+
+//    $_SESSION['email'] = $_POST['email'];
+//   $_SESSION['state'] = $_POST['state'];
+//    $_SESSION['seeking'] = $_POST['seeking'];
+//    $_SESSION['bio'] = $_POST['bio'];
 
     $view = new Template();
     echo $view->render("views/interests.html");

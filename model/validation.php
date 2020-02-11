@@ -87,12 +87,36 @@ function validEmail($email){
 }
 
 
-function validOutdoor(){
+function validOutdoor($indoor){
 
-
-}
-
-function validIndoor(){
+    global $f3;
+    return true;
 
 }
 
+function validIndoor($outdoor){
+
+    global $f3;
+    return true;
+}
+
+// page 2 validation
+function validInterest()
+{
+    global $f3;
+    $isValid = true;
+
+    if (!validOutdoor($f3->get('outdoor'))) {
+
+        $isValid = false;
+        $f3->set("errors['outdoor']", "Invalid selection");
+    }
+
+    if (!validIndoor($f3->get('indoor'))) {
+
+        $isValid = false;
+        $f3->set("errors['indoor']", "Invalid selection");
+    }
+
+    return $isValid;
+}
