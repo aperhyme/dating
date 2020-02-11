@@ -54,8 +54,8 @@ function validLast($lastName){
 // validate age
 function validAge($age){
 
-    return !empty($age) && ctype_digit($age) && $age > 18
-        && $age < 118;
+    return !empty($age) && ctype_digit($age) && $age >= 18
+        && $age <= 118;
 }
 
 // validate phone number
@@ -88,6 +88,7 @@ function validEmail($email){
 
 
 function validOutdoor(){
+
 
 }
 

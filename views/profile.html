@@ -29,37 +29,36 @@
 
                 <div class="col mb-3 mt-6 ml-4">
                     <!-- Email | text box -->
-                        <label for="email"><b>Email</b></label>
-                        <input type="text" class="form-control" id="email" name="email" value="{{ @email }}">
-
-                    <br>
-                        <check if="{{ @errors['email'] }}">
-                            <span class="alert">{{ @errors['email'] }}</span><br>
-                        </check>
+                    <label class="font-weight-bold">Email</label>
+                    <input class="form-control" type="text" name="email" value="{{ @email }}">
                     <br>
 
-                    <label><b>State</b><span class="required">  </span><br></label>
-                        <select class="form-control" id="state" name="state">
-                            <option value="none">Select State</option>
-                            <repeat group="{{ @state }}" value="{{ @state }}">
-                                <option value="{{ @state }}">{{ @state }}</option>
-                            </repeat>
-                        </select>
-
+                    <check if="{{ @errors['email'] }}">
+                        <span class="alert">{{ @errors['email'] }}</span><br>
+                    </check>
                     <br>
+
+                    <label class="font-weight-bold">State</label>
+                    <select class="form-control" name="state">
+                        <option value="none">Select State</option>
+
+                        <repeat group="{{ @states }}" value="{{ @state }}">
+                            <option value="{{ @state }}">{{ @state }}</option>
+                        </repeat>
+                    </select>
+                    <br>
+
                     <!-- Seeking -->
-                        <div>
-                            <label class="radio-inline"><b>Seeking</b><span class="required">  </span><br>
+                        <div class="form-check-inline">
+                            <label class="radio-inline"><b>Seeking</b><br>
                                 <input type="radio" name="seeking" value="Male"> Male<br>
                             </label>
 
                             <label>
                                 <input type="radio" name="seeking"  value="Female"> Female<br>
                             </label>
-                            <!-- <span id="err-Gender" class="err"> Please make a selection</span>-->
                         </div>
                 </div>
-
 
 
                 <div class="col d-flex align-items-end flex-column">

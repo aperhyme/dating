@@ -5,8 +5,6 @@
  * /328/dating/index.php
  */
 
-//Start a session
-session_start();
 
 // Turn on error reporting -- this is critical!
 ini_set('display_errors',1);
@@ -15,6 +13,9 @@ error_reporting(E_ALL);
 //Require autoload file
 require("vendor/autoload.php");
 require("model/validation.php");
+
+//Start a session
+session_start();
 
 
 //Instantiate F3
@@ -25,6 +26,11 @@ $f3->set('state', array('AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'G
     'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH',
     'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX',
     'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'));
+
+$f3->set('indoor', array('tv', 'movies', 'cooking', 'board games', 'puzzles', 'reading',
+    'playing cards', 'video games'));
+
+$f3->set('outdoor', array('hiking', 'biking', 'swimming', 'collecting', 'walking', 'climbing'));
 
 
 //Define a default route
