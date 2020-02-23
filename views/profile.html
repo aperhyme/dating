@@ -26,13 +26,12 @@
             </div>
 
             <div class="row">
-
-                <div class="col mb-3 mt-6 ml-4">
-                    <!-- Email | text box -->
+                <!-- Fields div -->
+                <div class="col mb-5 mt-5 ml-5">
                     <label class="font-weight-bold">Email</label>
                     <input class="form-control" type="text" name="email" value="{{ @email }}">
-                    <br>
 
+                    <br>
                     <check if="{{ @errors['email'] }}">
                         <span class="alert">{{ @errors['email'] }}</span><br>
                     </check>
@@ -41,40 +40,81 @@
                     <label class="font-weight-bold">State</label>
                     <select class="form-control" name="state">
                         <option value="none">Select State</option>
-
-                        <repeat group="{{ @state }}" value="{{ @state }}">
-                            <option value="{{ @state }}">{{ @state }}</option>
-                        </repeat>
+                        <option value="AL">AL</option>
+                        <option value="AK">AK</option>
+                        <option value="AZ">AZ</option>
+                        <option value="AR">AR</option>
+                        <option value="CA">CA</option>
+                        <option value="CO">CO</option>
+                        <option value="CT">CT</option>
+                        <option value="DE">DE</option>
+                        <option value="FL">FL</option>
+                        <option value="GA">GA</option>
+                        <option value="HI">HI</option>
+                        <option value="ID">ID</option>
+                        <option value="IL">IL</option>
+                        <option value="IN">IN</option>
+                        <option value="IA">IA</option>
+                        <option value="KS">KS</option>
+                        <option value="KY">KY</option>
+                        <option value="LA">LA</option>
+                        <option value="ME">ME</option>
+                        <option value="MD">MD</option>
+                        <option value="MA">MA</option>
+                        <option value="MI">MI</option>
+                        <option value="MN">MN</option>
+                        <option value="MS">MS</option>
+                        <option value="MO">MO</option>
+                        <option value="MT">MT</option>
+                        <option value="NE">NE</option>
+                        <option value="NV">NV</option>
+                        <option value="NH">NH</option>
+                        <option value="NJ">NJ</option>
+                        <option value="NM">NM</option>
+                        <option value="NY">NY</option>
+                        <option value="NC">NC</option>
+                        <option value="ND">ND</option>
+                        <option value="OH">OH</option>
+                        <option value="OK">OK</option>
+                        <option value="OR">OR</option>
+                        <option value="PA">PA</option>
+                        <option value="RI">RI</option>
+                        <option value="SC">SC</option>
+                        <option value="SD">SD</option>
+                        <option value="TN">TN</option>
+                        <option value="TX">TX</option>
+                        <option value="UT">UT</option>
+                        <option value="VT">VT</option>
+                        <option value="VA">VA</option>
+                        <option value="WA">WA</option>
+                        <option value="WV">WV</option>
+                        <option value="WI">WI</option>
+                        <option value="WY">WY</option>
                     </select>
+
                     <br>
 
-                    <!-- Seeking -->
-                        <div class="form-check-inline">
-                            <label class="radio-inline"><b>Seeking</b><br>
-                                <input class="form-check-input" type="radio" name="seeking" id="Male" value="Male">
-                                <label class="form-check-label mr-3" for="Male">Male</label>
-                                <input class="form-check-input" type="radio" name="seeking" id="Female" value="Female">
-                                <label class="form-check-label" for="Female">Female</label>
-                            </label>
-
-                        </div>
-                </div>
-
-
-                <div class="col d-flex align-items-end flex-column">
-                    <div class="form-group m-6 mb-auto">
-                        <label class="font-weight-bold" for="bio">Biography</label>
-                        <textarea class="form-control" id="bio" rows="4" cols="100" name="bio"></textarea>
+                    <p class="font-weight-bold">Seeking</p>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="seeking" id="Male" value="Male">
+                        <label class="form-check-label mr-3" for="Male">Male</label>
+                        <input class="form-check-input" type="radio" name="seeking" id="Female" value="Female">
+                        <label class="form-check-label" for="Female">Female</label>
                     </div>
 
+                </div>
+
+                <div class="col d-flex align-items flex-column">
+                    <div class="form-group m-5 mb-auto p-2">
+                        <label class="font-weight-bold" for="biography">Biography</label>
+                        <textarea class="form-control" id="biography" rows="4" name="biography"></textarea>
+                    </div>
 
                     <!-- Button div -->
-                    <div>
-                        <input type="submit" class="btn btn-primary" value="Next >">
+                    <div class="text-right mb-5 mr-5 p-2">
+                        <input type="submit" class="btn btn-primary position-relative" value="Next >">
                     </div>
-
                 </div>
-
             </div>
         </fieldset>
     </form>
