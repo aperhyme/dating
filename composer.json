@@ -10,7 +10,7 @@
     "bcosca/fatfree-core": "dev-master"
   },
   "autoload": {
-    "classmap": ["model/", "classes/"]
+    "classmap": ["model/", "controller/", "classes/"]
   }
 
 }
