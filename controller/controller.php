@@ -4,7 +4,6 @@
 <!--* /328/dating/controller/controller.php-->
 <!--* php controller-->
 <!--*/-->
-
 <?php
 
 class Controller
@@ -47,14 +46,14 @@ class Controller
             //If data is valid
             if (validPersonal()) {
 
-                if(isset($_POST['Member'])){
-                    $member = new PremiumMember($firstName, $lastName, $age, $gender, $phone);
+                if(isset($_POST['prem'])){
+                    $member = new premiumMember($firstName, $lastName, $age, $gender, $phone);
                 }
                 else{
-                    $member = new Member($firstName, $lastName, $age, $gender, $phone);
+                    $member = new member($firstName, $lastName, $age, $gender, $phone);
                 }
-                $_SESSION['Member'] = $member;
 
+                $_SESSION['member'] = $member;
                 //Redirect to profile page
                 $this->_f3->reroute('/page2');
             }
@@ -91,14 +90,14 @@ class Controller
             if (validProfile()) {
 
                 //Write data to Session
-                $member->setEmail($email);
+                $member->setEmail($_POST['email']);
                 $member->setSeeking($_POST['seeking']);
                 $member->setBio($_POST['bio']);
                 $member->setState($_POST['state']);
-                $_SESSION['Member'] = $member;
+                $_SESSION['member'] = $member;
 
-                if($member->memberType() == "Member") {
-                    $this->_f3->reroute('/summary');
+                if($member->memberType() == "member") {
+                    $this->_f3->reroute('/results');
                 } else {
                     $this->_f3->reroute('/page3');
                 }
@@ -133,8 +132,6 @@ class Controller
                 $member->setInDoorInterests($selectedIndoor);
                 $member->setOutDoorInterests($selectedOutdoor);
 
-                //Redirect to Summary
-                $this->_f3->reroute('/summary');
             }
         }
         $view = new Template();

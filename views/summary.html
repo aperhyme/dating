@@ -46,7 +46,14 @@
                             <td>Seeking: {{ @SESSION.seeking }}</td>
                         </tr>
                         <tr>
-                            <td>Interests: {{ implode(", ", @SESSION.roles) }}</td>
+                            <check if="{{ @SESSION.member->memberType() == 'prem' }}">
+                                <td>Interests:</td>
+                                <td> Indoor:  {{ implode(", ", @SESSION.member->getInDoorInterests()) }} <br>
+
+                                    Outdoor: {{ implode(", ",  @SESSION.member->getOutDoorInterests()) }}
+                                </td>
+                            </check>
+
                         </tr>
                         </tbody>
                     </table>

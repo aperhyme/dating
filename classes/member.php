@@ -1,13 +1,13 @@
 <!--/**-->
 <!--* Alex Grigorenko-->
 <!--* 2/20/20-->
-<!--* /328/dating/views/member.php-->
+<!--* /328/dating/classes/member.php-->
 <!--* members class-->
 <!--*/-->
 
 <?php
 
-class member
+class Member
 {
     private $_fname;
     private $_lname;
@@ -26,6 +26,14 @@ class member
         $this->_age = $age;
         $this->_gender = $gender;
         $this->_phone = $phone;
+    }
+
+    /*
+     * @return String of the type of membership
+     */
+    public function memberType()
+    {
+        return "member";
     }
 
     /**

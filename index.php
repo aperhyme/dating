@@ -22,7 +22,7 @@ session_start();
 $f3 = Base::Instance();
 
 $f3->set('DEBUG', 3);
-$controller = new controller($f3);
+$controller = new Controller($f3);
 
 //Define arrays
 $f3->set('state', array('AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA',
@@ -41,8 +41,13 @@ $f3->route("GET /", function (){
     $GLOBALS['controller']->home();
 });
 
+// personal info, profile, interests,  profile summary
+$f3 -> route('GET /home', function($f3){
+    $GLOBALS['controller']->home();
+});
+
 //Define a personal route
-$f3->route("GET|POST /page", function ($f3) {
+$f3->route("GET|POST /page", function () {
 
     $GLOBALS['controller']->personal();
 
@@ -85,7 +90,7 @@ $f3->route("GET|POST /page", function ($f3) {
 });
 
 //Define a profile route
-$f3->route("GET|POST /page2", function ($f3) {
+$f3->route("GET|POST /page2", function () {
     //var_dump($_POST);
 
 
@@ -136,6 +141,7 @@ $f3->route("GET|POST /page2", function ($f3) {
 //Define a interests route
 $f3->route("GET|POST /page3", function () {
     //var_dump($_POST);
+
     $GLOBALS['controller']->interests();
 
 //    $_SESSION['email'] = $_POST['email'];
@@ -149,7 +155,9 @@ $f3->route("GET|POST /page3", function () {
 
 //Define a summary route
 $f3->route("POST /results", function () {
+
     $GLOBALS['controller']->summary();
+
 //    $_SESSION['roles'] = $_POST['roles'];
 //
 //    $view = new Template();
