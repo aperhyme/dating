@@ -12,11 +12,11 @@ error_reporting(E_ALL);
 
 //Require autoload file
 require("vendor/autoload.php");
-require("model/validation.php");
 
 //Start a session
 session_start();
 
+require("model/validation.php");
 
 //Instantiate F3
 $f3 = Base::Instance();
@@ -41,127 +41,125 @@ $f3->route("GET /", function (){
     $GLOBALS['controller']->home();
 });
 
-// personal info, profile, interests,  profile summary
-$f3 -> route('GET /home', function($f3){
-    $GLOBALS['controller']->home();
-});
-
 //Define a personal route
-$f3->route("GET|POST /page", function () {
+$f3->route("GET|POST /page", function ($f3) {
 
-    $GLOBALS['controller']->personal();
+    //$GLOBALS['controller']->personal();
 
-//    //If form has been submitted, validate
-//    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-//
-//        //Get data from form
-//        $firstName = $_POST['firstName'];
-//        $lastName = $_POST['lastName'];
-//        $age = $_POST['age'];
-//        $phone = $_POST['phone'];
-//        $gender = $_POST['gender'];
-//
-//        //Add data to hive
-//        $f3->set('firstName', $firstName);
-//        $f3->set('lastName', $lastName);
-//        $f3->set('age', $age);
-//        $f3->set('phone', $phone);
-//        $f3->set('gender', $gender);
-//
-//
-//        //If data is valid
-//        if (validPersonal()) {
-//
-//            //Write data to Session
-//            $_SESSION['firstName'] = $firstName;
-//            $_SESSION['lastName'] = $lastName;
-//            $_SESSION['age'] = $age;
-//            $_SESSION['phone'] = $phone;
-//            $_SESSION['gender'] = $gender;
-//
-//            //Redirect to profile page
-//            $f3->reroute('/page2');
-//        }
-//    }
-//
-//    $view = new Template();
-//    echo $view->render("views/personal.html");
+    //If form has been submitted, validate
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        //Get data from form
+        $firstName = $_POST['firstName'];
+        $lastName = $_POST['lastName'];
+        $age = $_POST['age'];
+        $phone = $_POST['phone'];
+        $gender = $_POST['gender'];
+
+        //Add data to hive
+        $f3->set('firstName', $firstName);
+        $f3->set('lastName', $lastName);
+        $f3->set('age', $age);
+        $f3->set('phone', $phone);
+        $f3->set('gender', $gender);
+
+
+        //If data is valid
+        if (validPersonal()) {
+
+            //Write data to Session
+            $_SESSION['firstName'] = $firstName;
+            $_SESSION['lastName'] = $lastName;
+            $_SESSION['age'] = $age;
+            $_SESSION['phone'] = $phone;
+            $_SESSION['gender'] = $gender;
+
+            //Redirect to profile page
+            $f3->reroute('/page2');
+        }
+    }
+
+    $view = new Template();
+    echo $view->render("views/personal.html");
 
 });
 
 //Define a profile route
-$f3->route("GET|POST /page2", function () {
+$f3->route("GET|POST /page2", function ($f3) {
     //var_dump($_POST);
 
 
-    $GLOBALS['controller']->profile();
+   // $GLOBALS['controller']->profile();
 
 
-//    //If form has been submitted, validate
-//    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-//
-//        //Get data from form
-//        $email = $_POST['email'];
-//        $state = $_POST['state'];
-//        $seeking = $_POST['seeking'];
-//        $bio = $_POST['bio'];
-//
-//
-//        //Add data to hive
-//        $f3->set('email', $email);
-//        $f3->set('state', $state);
-//        $f3->set('seeking', $seeking);
-//        $f3->set('bio', $bio);
-//
-//
-//        //If data is valid
-//        if (validProfile()) {
-//
-//            //Write data to Session
-//            $_SESSION['email'] = $email;
-//            $_SESSION['state'] = $state;
-//            $_SESSION['seeking'] = $seeking;
-//            $_SESSION['bio'] = $bio;
-//
-//            //Redirect to profile page
-//            $f3->reroute('/page3');
-//        }
-//    }
-//
-////    $_SESSION['firstName'] = $_POST['firstName'];
-////    $_SESSION['lastName'] = $_POST['lastName'];
-////    $_SESSION['age'] = $_POST['age'];
-////    $_SESSION['gender'] = $_POST['gender'];
-////    $_SESSION['phone'] = $_POST['phone'];
-//
-//    $view = new Template();
-//    echo $view->render("views/profile.html");
+    //If form has been submitted, validate
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        //Get data from form
+        $email = $_POST['email'];
+        $state = $_POST['state'];
+        $seeking = $_POST['seeking'];
+        $bio = $_POST['bio'];
+
+
+        //Add data to hive
+        $f3->set('email', $email);
+        $f3->set('state', $state);
+        $f3->set('seeking', $seeking);
+        $f3->set('bio', $bio);
+
+
+        //If data is valid
+        if (validProfile()) {
+
+            //Write data to Session
+            $_SESSION['email'] = $email;
+            $_SESSION['state'] = $state;
+            $_SESSION['seeking'] = $seeking;
+            $_SESSION['bio'] = $bio;
+
+            //Redirect to profile page
+            $f3->reroute('/page3');
+        }
+    }
+
+//    $_SESSION['firstName'] = $_POST['firstName'];
+//    $_SESSION['lastName'] = $_POST['lastName'];
+//    $_SESSION['age'] = $_POST['age'];
+//    $_SESSION['gender'] = $_POST['gender'];
+//    $_SESSION['phone'] = $_POST['phone'];
+
+    $view = new Template();
+    echo $view->render("views/profile.html");
 });
 
 //Define a interests route
 $f3->route("GET|POST /page3", function () {
     //var_dump($_POST);
 
-    $GLOBALS['controller']->interests();
+   // $GLOBALS['controller']->interests();
 
 //    $_SESSION['email'] = $_POST['email'];
 //   $_SESSION['state'] = $_POST['state'];
 //    $_SESSION['seeking'] = $_POST['seeking'];
 //    $_SESSION['bio'] = $_POST['bio'];
 
-//    $view = new Template();
-//    echo $view->render("views/interests.html");
+    $view = new Template();
+    echo $view->render("views/interests.html");
 });
 
 //Define a summary route
 $f3->route("POST /results", function () {
 
-    $GLOBALS['controller']->summary();
+   // $GLOBALS['controller']->summary();
 
-//    $_SESSION['roles'] = $_POST['roles'];
-//
-//    $view = new Template();
-//    echo $view->render("views/summary.html");
+    $_SESSION['roles'] = $_POST['roles'];
+
+    $view = new Template();
+    echo $view->render("views/summary.html");
+
+//    session_destroy();
+//    $_SESSION = array();
 });
 
 

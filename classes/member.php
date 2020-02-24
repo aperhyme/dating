@@ -1,11 +1,12 @@
-<!--/**-->
-<!--* Alex Grigorenko-->
-<!--* 2/20/20-->
-<!--* /328/dating/classes/member.php-->
-<!--* members class-->
-<!--*/-->
-
 <?php
+/**
+ * Alex Grigorenko
+ * 2/20/20
+ * /328/dating/classes/member.php
+ * members class
+ */
+
+
 
 class Member
 {

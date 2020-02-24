@@ -1,10 +1,11 @@
-<!--/**-->
-<!--* Alex Grigorenko-->
-<!--* 2/22/20-->
-<!--* /328/dating/controller/controller.php-->
-<!--* php controller-->
-<!--*/-->
 <?php
+
+/**
+ * Alex Grigorenko
+ * 2/22/20
+ * /328/dating/controller/controller.php
+ * php controller
+ */
 
 class Controller
 {
@@ -50,12 +51,12 @@ class Controller
                     $member = new premiumMember($firstName, $lastName, $age, $gender, $phone);
                 }
                 else{
-                    $member = new member($firstName, $lastName, $age, $gender, $phone);
+                    $member = new Member($firstName, $lastName, $age, $gender, $phone);
                 }
 
                 $_SESSION['member'] = $member;
                 //Redirect to profile page
-                $this->_f3->reroute('/page2');
+                $this->_f3->reroute('/page');
             }
         }
 
@@ -97,7 +98,7 @@ class Controller
                 $_SESSION['member'] = $member;
 
                 if($member->memberType() == "member") {
-                    $this->_f3->reroute('/results');
+                    $this->_f3->reroute('/summary');
                 } else {
                     $this->_f3->reroute('/page3');
                 }
