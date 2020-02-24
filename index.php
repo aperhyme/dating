@@ -21,6 +21,7 @@ session_start();
 //Instantiate F3
 $f3 = Base::Instance();
 
+$f3->set('DEBUG', 3);
 $controller = new controller($f3);
 
 //Define arrays
