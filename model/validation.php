@@ -41,25 +41,29 @@ function validPersonal()
 
 
 //validate name
-function validFirst($firstName) {
+function validFirst($firstName)
+{
 
     return !empty($firstName) && ctype_alpha($firstName);
 }
 
-function validLast($lastName){
+function validLast($lastName)
+{
 
     return !empty($lastName) && ctype_alpha($lastName);
 }
 
 // validate age
-function validAge($age){
+function validAge($age)
+{
 
     return !empty($age) && ctype_digit($age) && $age >= 18
         && $age <= 118;
 }
 
 // validate phone number
-function validPhone($phone){
+function validPhone($phone)
+{
 
     return !empty($phone) && ctype_digit($phone);
 }
@@ -81,20 +85,23 @@ function validProfile()
 
 
 // validate email
-function validEmail($email){
+function validEmail($email)
+{
 
     return !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
 
-function validOutdoor($indoor){
+function validOutdoor($indoor)
+{
 
     global $f3;
     return true;
 
 }
 
-function validIndoor($outdoor){
+function validIndoor($outdoor)
+{
 
     global $f3;
     return true;
