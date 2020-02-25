@@ -1,29 +1,18 @@
-<!--/**-->
-<!--* Alex Grigorenko-->
-<!--* 2/20/20-->
-<!--* /328/dating/classes/premiumMember.php-->
-<!--* members class-->
-<!--*/-->
-
 <?php
+
+/**
+ * Alex Grigorenko
+ * 2/20/20
+ * /328/dating/classes/premiumMember.php
+ * members class
+ */
 
 class PremiumMember extends Member
 {
 
-    private $inDoorInterests;
-    private $outDoorInterests;
+    private $_inDoorInterests;
+    private $_outDoorInterests;
 
-    /**
-     * PremiumMember constructor.
-     * @param $inDoorInterests
-     * @param $outDoorInterests
-     */
-    public function __construct($inDoorInterests, $outDoorInterests)
-    {
-        //parent::__construct();
-        $this->inDoorInterests = $inDoorInterests;
-        $this->outDoorInterests = $outDoorInterests;
-    }
 
     public function memberType()
     {
@@ -34,15 +23,15 @@ class PremiumMember extends Member
      */
     public function getInDoorInterests()
     {
-        return $this->inDoorInterests;
+        return $this->_inDoorInterests;
     }
 
     /**
-     * @param mixed $inDoorInterests
+     * @param mixed $_inDoorInterests
      */
-    public function setInDoorInterests($inDoorInterests)
+    public function setInDoorInterests($_inDoorInterests)
     {
-        $this->inDoorInterests = $inDoorInterests;
+        $this->_inDoorInterests = $_inDoorInterests;
     }
 
     /**
@@ -50,15 +39,15 @@ class PremiumMember extends Member
      */
     public function getOutDoorInterests()
     {
-        return $this->outDoorInterests;
+        return $this->_outDoorInterests;
     }
 
     /**
-     * @param mixed $outDoorInterests
+     * @param mixed $_outDoorInterests
      */
-    public function setOutDoorInterests($outDoorInterests)
+    public function setOutDoorInterests($_outDoorInterests)
     {
-        $this->outDoorInterests = $outDoorInterests;
+        $this->_outDoorInterests = $_outDoorInterests;
     }
 
 }

@@ -92,38 +92,32 @@ function validEmail($email)
 }
 
 
-function validOutdoor($indoor)
-{
-
+// validate indoor
+function  indoorInterests($selectedIndoor){
+    $indoor = array('tv', 'puzzles', 'movies', 'video games', 'board games', 'playing cards', 'cooking', 'reading');
     global $f3;
-    return true;
-
+    $isValid = true;
+    return $isValid;
 }
 
-function validIndoor($outdoor)
-{
-
-    global $f3;
-    return true;
-}
-
-// page 2 validation
-function validInterest()
-{
+// validate outdoor
+function outdoorInterests( $selectedOutdoor){
+    $outdoor = array ('collecting', 'climbing', 'swimming', 'biking', 'walking', 'hiking');
     global $f3;
     $isValid = true;
 
-    if (!validOutdoor($f3->get('outdoor'))) {
-
-        $isValid = false;
-        $f3->set("errors['outdoor']", "Invalid selection");
-    }
-
-    if (!validIndoor($f3->get('indoor'))) {
-
-        $isValid = false;
-        $f3->set("errors['indoor']", "Invalid selection");
-    }
-
     return $isValid;
+
+    // checks if interests are valid
+    function validInterest($selectedIndoor, $selectedOutdoor) {
+        global $f3;
+        $isValid = true;
+        if(!indoorInterests($selectedIndoor)){
+            $isValid = false;
+        }
+        if(!outdoorInterests($selectedOutdoor)){
+            $isValid = false;
+        }
+        return $isValid;
+    }
 }

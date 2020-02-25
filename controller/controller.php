@@ -48,7 +48,7 @@ class Controller
             if (validPersonal()) {
 
                 if(isset($_POST['prem'])){
-                    $member = new premiumMember($firstName, $lastName, $age, $gender, $phone);
+                    $member = new PremiumMember($firstName, $lastName, $age, $gender, $phone);
                 }
                 else{
                     $member = new Member($firstName, $lastName, $age, $gender, $phone);
@@ -56,7 +56,7 @@ class Controller
 
                 $_SESSION['member'] = $member;
                 //Redirect to profile page
-                $this->_f3->reroute('/page');
+                $this->_f3->reroute('/page2');
             }
         }
 
@@ -67,7 +67,6 @@ class Controller
 
     public function profile()
     {
-
         //If form has been submitted, validate
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -83,7 +82,6 @@ class Controller
             $this->_f3->set('state', $state);
             $this->_f3->set('seeking', $seeking);
             $this->_f3->set('bio', $bio);
-
             $member = $_SESSION['member'];
 
 
@@ -98,7 +96,7 @@ class Controller
                 $_SESSION['member'] = $member;
 
                 if($member->memberType() == "member") {
-                    $this->_f3->reroute('/summary');
+                    $this->_f3->reroute('/results');
                 } else {
                     $this->_f3->reroute('/page3');
                 }
@@ -111,6 +109,7 @@ class Controller
 
     public function interests()
     {
+
         $selectedIndoor = array();
         $selectedOutdoor = array();
 
@@ -133,6 +132,7 @@ class Controller
                 $member->setInDoorInterests($selectedIndoor);
                 $member->setOutDoorInterests($selectedOutdoor);
 
+                $this->_f3->reroute('/results');
             }
         }
         $view = new Template();
@@ -144,6 +144,7 @@ class Controller
     {
         $view = new Template();
         echo $view->render('views/summary.html');
+
     }
 
 
