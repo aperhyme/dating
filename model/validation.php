@@ -98,6 +98,11 @@ function  indoorInterests($selectedIndoor)
     $indoor = array('tv', 'puzzles', 'movies', 'video games', 'board games', 'playing cards', 'cooking', 'reading');
     global $f3;
     $isValid = true;
+    if(count(array_intersect($selectedIndoor, $indoor)) != sizeof($selectedIndoor)){
+        $f3->set("errors['indoorI']", "Please choose a valid indoor interest.");
+        $isValid = false;
+    }
+
     return $isValid;
 }
 
@@ -107,20 +112,25 @@ function outdoorInterests( $selectedOutdoor)
     $outdoor = array ('collecting', 'climbing', 'swimming', 'biking', 'walking', 'hiking');
     global $f3;
     $isValid = true;
-
+    var_dump($selectedOutdoor);
+    if(count(array_intersect($selectedOutdoor, $outdoor)) != sizeof($selectedOutdoor)){
+        $f3->set("errors['outdoorI']", "Please choose a valid outdoor interest.");
+        $isValid = false;
+    }
     return $isValid;
 
-    // checks if interests are valid
-    function validInterest($selectedIndoor, $selectedOutdoor)
-    {
-        global $f3;
-        $isValid = true;
-        if(!indoorInterests($selectedIndoor)){
-            $isValid = false;
-        }
-        if(!outdoorInterests($selectedOutdoor)){
-            $isValid = false;
-        }
-        return $isValid;
+}
+
+// checks if interests are valid
+function validInterest($selectedIndoor, $selectedOutdoor)
+{
+    global $f3;
+    $isValid = true;
+    if(!indoorInterests($selectedIndoor)){
+        $isValid = false;
     }
+    if(!outdoorInterests($selectedOutdoor)){
+        $isValid = false;
+    }
+    return $isValid;
 }

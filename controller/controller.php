@@ -7,7 +7,7 @@
  * php controller
  */
 
-class Controller
+class memberController
 {
     private $_f3;
 
@@ -86,7 +86,7 @@ class Controller
 
 
             //If data is valid
-            if (validProfile()) {
+            if (validProfile($email)) {
 
                 //Write data to Session
                 $member->setEmail($_POST['email']);

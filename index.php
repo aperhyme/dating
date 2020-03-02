@@ -12,17 +12,16 @@ error_reporting(E_ALL);
 
 //Require autoload file
 require("vendor/autoload.php");
+require("model/validation.php");
 
 //Start a session
 session_start();
-
-require("model/validation.php");
 
 //Instantiate F3
 $f3 = Base::Instance();
 
 $f3->set('DEBUG', 3);
-$controller = new Controller($f3);
+$controller = new memberController($f3);
 
 //Define arrays
 $f3->set('state', array('AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA',
@@ -30,10 +29,14 @@ $f3->set('state', array('AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'G
     'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX',
     'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'));
 
-$f3->set('indoor', array('tv', 'movies', 'cooking', 'board games', 'puzzles', 'reading',
-    'playing cards', 'video games'));
+$indoor = array('tv', 'movies', 'cooking', 'board games', 'puzzles', 'reading',
+    'playing cards', 'video games');
 
-$f3->set('outdoor', array('hiking', 'biking', 'swimming', 'collecting', 'walking', 'climbing'));
+$f3->set('indoor', $indoor);
+
+$outdoor = array('hiking', 'biking', 'swimming', 'collecting', 'walking', 'climbing');
+
+$f3->set('outdoor', $outdoor);
 
 
 //Define a default route
