@@ -147,5 +147,12 @@ class memberController
 
     }
 
+    public function admin()
+    {
+        $view = new Template();
+        echo $view->render('views/admin.html');
+
+    }
+
 
 }

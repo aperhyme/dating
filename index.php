@@ -166,6 +166,11 @@ $f3->route("GET|POST /results", function () {
 
 });
 
+$f3->route("GET /admin", function () {
+
+    $GLOBALS['controller']->admin();
+});
+
 
 
 //Run f3
