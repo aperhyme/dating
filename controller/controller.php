@@ -172,7 +172,7 @@ class memberController
     }
 
     /**
-     * function for admin page with all the sign ups
+     * function for admin page with all the members
      */
     public function admin()
     {
