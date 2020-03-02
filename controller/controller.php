@@ -7,10 +7,21 @@
  * php controller
  */
 
+
+/**
+ * Class MemberController routes to all the pages
+ * @attribute $_f3 object
+ *
+ */
 class memberController
 {
     private $_f3;
 
+
+    /**
+     * MemberController constructor.
+     * @param a fat-free object $f3
+     */
     public function __construct($f3)
     {
         $this->_f3 = $f3;
@@ -23,6 +34,10 @@ class memberController
         echo $view->render("views/home.html");
     }
 
+
+    /**
+     * function for personal info page
+     */
     public function personal()
     {
 
@@ -65,6 +80,9 @@ class memberController
 
     }
 
+    /**
+     * function for profile page
+     */
     public function profile()
     {
         //If form has been submitted, validate
@@ -107,6 +125,9 @@ class memberController
 
     }
 
+    /**
+     * function for interests info page
+     */
     public function interests()
     {
 
@@ -140,6 +161,9 @@ class memberController
 
     }
 
+    /**
+     * function for summary page with all the info page
+     */
     public function summary()
     {
         $view = new Template();
@@ -147,12 +171,15 @@ class memberController
 
     }
 
+    /**
+     * function for admin page with all the sign ups
+     */
     public function admin()
     {
         $view = new Template();
         echo $view->render('views/admin.html');
-
     }
+
 
 
 }
