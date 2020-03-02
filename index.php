@@ -166,8 +166,7 @@ $f3->route("GET|POST /results", function () {
 
 });
 
-$f3->route("GET /admin", function () {
-
+$f3->route("GET|POST /admin", function () {
     $GLOBALS['controller']->admin();
 });
 
